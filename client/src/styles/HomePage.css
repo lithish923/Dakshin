@@ -1,0 +1,139 @@
+.login-container {
+    min-height: 100vh;
+    background-color: #0052CC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  
+  .logo-section {
+    background-color: white;
+    border-radius: 70%; /* Increased for more oval shape */
+    padding: 12px 48px; /* Adjusted padding to create oval shape */
+    margin-bottom: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Fixed height for oval shape */
+    width: 380px;
+  }
+  
+  .logo {
+    height: 90px; /* Adjusted height to fit oval */
+    object-fit: contain;
+    margin-bottom: -7px;
+  }
+  
+  .text-section {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 48px;
+  }
+  
+  .welcome-text {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .manage-text {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .subtext {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .login-options {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 16px;
+    background-color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .login-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 480px) {
+    .login-container {
+      padding: 20px 16px;
+    }
+  
+    .logo-section {
+      padding: 10px 40px; /* Adjusted for mobile */
+      height: 160px; /* Smaller height for mobile */
+      min-width: 160px; /* Smaller width for mobile */
+    }
+  
+    .logo {
+      height: 290px; /* Adjusted for mobile */
+    }
+  
+    .welcome-text {
+      font-size: 28px;
+      margin-bottom: 50px;
+      margin-left: 20px;
+    }
+  
+    .manage-text {
+      font-size: 20px;
+      margin-bottom: 15px;
+      margin-left: 20px;
+    }
+  
+    .subtext {
+      font-size: 16px;
+      margin-left: 20px;
+    }
+  
+    .login-text {
+      font-size: 16px;
+      margin-left: 20px;
+    }
+  }
+  
+  @media screen and (min-height: 800px) {
+    .login-container {
+      height: 100vh;
+    }
+  }
