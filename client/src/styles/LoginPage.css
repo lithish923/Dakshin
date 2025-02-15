@@ -1,0 +1,112 @@
+.login-container-2 {
+    min-height: 100vh;
+    background-color: #0052CC;
+    color: #1f2937;
+  }
+  
+  .header {
+    padding: 5rem;
+  }
+  
+  .back-button {
+    position: absolute; /* Make it float over the layout */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  
+  .back-button:hover {
+    opacity: 0.8;
+  }
+  
+  .title {
+    color: white;
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: -50px;
+  }
+  
+  .login-card {
+    background-color: white;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    min-height: calc(100vh - 10rem);
+    margin-bottom: 50px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    color: #000000;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #1a56db;
+    box-shadow: 0 0 0 2px rgba(26, 86, 219, 0.1);
+  }
+  
+  .forgot-password {
+    text-align: right;
+  }
+  
+  .forgot-link {
+    color: #1a56db;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+  
+  .forgot-link:hover {
+    color: #1e40af;
+  }
+  
+  .login-button {
+    width: 100%;
+    background-color: #1a56db;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-button:hover {
+    background-color: #1e40af;
+  }
+  
+  .login-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #1a56db;
+  }
