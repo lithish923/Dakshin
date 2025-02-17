@@ -15,6 +15,15 @@ const LoginPage = () => {
         }
     };
 
+    const handleLogin = (e) => {
+      e.preventDefault();
+      if (username === "admin" && password === "password") { // Change this logic as needed
+          navigate("/dashboard");
+      } else {
+          alert("Invalid Credentials!");
+      }
+  };
+
     return (
       <div className="login2-container-2">
         <div className="header">

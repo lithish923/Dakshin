@@ -22,7 +22,7 @@
   }
   
   .logo {
-    height: 90px; /* Adjusted height to fit oval */
+    height: 250px; /* Adjusted height to fit oval */
     object-fit: contain;
     margin-bottom: -7px;
   }

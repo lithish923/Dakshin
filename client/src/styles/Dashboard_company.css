@@ -1,0 +1,166 @@
+.dashboard-header {
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #1a56db;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.dashboard-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 60px; /* Add padding to prevent content from hiding behind the header */
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffff;
+}
+
+.date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffff;
+}
+
+/* Toggle Buttons */
+.toggle-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.calendar {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Toggle Container */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.toggle-option {
+    padding: 8px 15px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.toggle-option.active {
+    background: #1a56db;
+    color: white;
+    border-radius: 20px;
+}
+
+.toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.revenue-box {
+    background: rgb(171, 255, 153);
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 15rem;
+    border-radius: 0.5rem;
+}
+
+.revenue-amount {
+    color: blue;
+    font-size: 24px;
+    font-family: "Ibarra Real Nova-Bold", Helvetica;
+}
+
+/* Stats and Payments */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.stat-box, .payment-box {
+    background: #dde5ff;
+    padding: 10px;
+    width: 8rem;
+    height: 8rem;
+    margin: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.payment-box {
+    background: #D8FFCB;
+}
+
+.totalorders-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+.pendingorders-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+.completedorders-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+.onprogress-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+.totalpayments-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+.completedpayments-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+.pendingpayments-company{
+    color: #1a56db;
+    font-size: 35px;
+}
+
+/* Chart Section */
+.chart-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
