@@ -1,11 +1,24 @@
 import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/LoginPage.css"; 
 
 const LoginPage = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const role = location.state?.role || "Company"; // Default to "Company"
+
+    const handleBack = () => {
+        if (window.history.length > 1) {
+            navigate(-1);  // Go back if there is history
+        } else {
+            navigate("/");  // Otherwise, go to homepage
+        }
+    };
+
     return (
-      <div className="login-container-2">
+      <div className="login2-container-2">
         <div className="header">
-          <button className="back-button">
+          <button className="back-button" onClick={handleBack}>
             <svg 
               width="24" 
               height="24" 
@@ -20,11 +33,11 @@ const LoginPage = () => {
             </svg>
           </button>
           
-          <h1 className="title">Login</h1>
+          <h1 className="title">Login as {role}</h1>
         </div>
         
-        <div className="login-card">
-          <form className="login-form">
+        <div className="login2-card">
+          <form className="login2-form">
             <div className="form-group">
               <label htmlFor="username">Username Or Email</label>
               <input
@@ -44,18 +57,18 @@ const LoginPage = () => {
             </div>
             
             <div className="forgot-password">
-              <a href="#" className="forgot-link">
+              <a href="forget" className="forgot-link">
                 Forgot Password?
               </a>
             </div>
             
-            <button type="submit" className="login-button">
+            <button type="submit" className="login2-button">
               Login
             </button>
           </form>
         </div>
       </div>
     );
-  };
-  
-  export default LoginPage;
+};
+
+export default LoginPage;

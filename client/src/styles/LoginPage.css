@@ -1,4 +1,4 @@
-.login-container-2 {
+.login2-container-2 {
     min-height: 100vh;
     background-color: #0052CC;
     color: #1f2937;
@@ -34,7 +34,7 @@
     margin-left: -50px;
   }
   
-  .login-card {
+  .login2-card {
     background-color: white;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
@@ -43,7 +43,7 @@
     margin-bottom: 50px;
   }
   
-  .login-form {
+  .login2-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -90,7 +90,7 @@
     color: #1e40af;
   }
   
-  .login-button {
+  .login2-button {
     width: 100%;
     background-color: #1a56db;
     color: white;
@@ -102,11 +102,11 @@
     transition: background-color 0.2s;
   }
   
-  .login-button:hover {
+  .login2-button:hover {
     background-color: #1e40af;
   }
   
-  .login-button:focus {
+  .login2-button:focus {
     outline: none;
     box-shadow: 0 0 0 2px white, 0 0 0 4px #1a56db;
   }

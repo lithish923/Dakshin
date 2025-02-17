@@ -5,6 +5,10 @@ import "../styles/HomePage.css";
 const HomePage = () => {
   const navigate = useNavigate();
 
+  const handleLoginClick = (role) => {
+    navigate("/login", { state: { role } });  // Pass role as state
+  };
+
   return (
     <div className="login-container">
       {/* Logo Section */}
@@ -23,10 +27,10 @@ const HomePage = () => {
       <div className="login-options">
         <p className="login-text">LOGIN AS</p>
         <div className="button-group">
-          <button className="login-button" onClick={() => navigate("/company")}>
+          <button className="login-button" onClick={() => handleLoginClick("Company")}>
             COMPANY
           </button>
-          <button className="login-button" onClick={() => navigate("/dealer")}>
+          <button className="login-button" onClick={() => handleLoginClick("Dealer")}>
             DEALER
           </button>
         </div>
