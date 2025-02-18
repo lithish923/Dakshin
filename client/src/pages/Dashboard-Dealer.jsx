@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Dashboard_Dealer.css";
+import { Pie } from "react-chartjs-2"; // Import Pie chart
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import "../styles/Dashboard_company.css";
+import Sidebar from "../components/Sidebar-dealer.jsx";
 
 import { IoMenu, IoCalendarOutline } from "react-icons/io5";
 import { MdOutlineToggleOff, MdOutlineToggleOn } from "react-icons/md";
 
+// Register chart components
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 const Dashboard = () => {
     const navigate = useNavigate();
-    
     const [isToggled, setIsToggled] = useState(false);
-
-    const handleToggle = () => {
-        setIsToggled((prevState) => !prevState);
-    };
-
     const [currentDate, setCurrentDate] = useState("");
 
     useEffect(() => {
@@ -22,12 +22,45 @@ const Dashboard = () => {
         setCurrentDate(formattedDate);
     }, []);
 
+    const handleToggle = () => {
+        setIsToggled((prevState) => !prevState);
+    };
+
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // Dummy data for the pie chart
+    const data = {
+        labels: ["Dealer A", "Dealer B", "Dealer C", "Dealer D", "Dealer E"],
+        datasets: [
+            {
+                label: "Sales Distribution",
+                data: [20, 25, 15, 30, 10], // Example percentages
+                backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4CAF50", "#FF9800"],
+            },
+        ],
+    };
+
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: "top",
+            },
+            title: {
+                display: true,
+                text: "Sales Distribution by Dealers",
+            },
+        },
+    };
+
     return (
         <div className="dashboard-container">
             <div className="dashboard-header">
-                <button className="menu-button">
+                <button className="menu-button" onClick={() => setMenuOpen(true)}>
                     <IoMenu size={30} color="white" />
                 </button>
+                <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
                 <span className="date">{currentDate}</span>
             </div>
 
@@ -35,38 +68,20 @@ const Dashboard = () => {
                 <button className="calendar">
                     <IoCalendarOutline size={30} color="black" />
                 </button>
-                
                 <div className="toggle-container">
-                    <button 
-                        className={`toggle-option ${!isToggled ? "active" : ""}`}
-                        onClick={() => setIsToggled(false)}
-                    >
-                        MONTHLY
-                    </button>
-
+                    <button className={`toggle-option ${!isToggled ? "active" : ""}`} onClick={() => setIsToggled(false)}>MONTHLY</button>
                     <button className="toggle" onClick={handleToggle}>
-                        {isToggled ? (
-                            <MdOutlineToggleOn size={30} color="black" />
-                        ) : (
-                            <MdOutlineToggleOff size={30} color="black" />
-                        )}
+                        {isToggled ? <MdOutlineToggleOn size={30} color="black" /> : <MdOutlineToggleOff size={30} color="black" />}
                     </button>
-
-                    <button 
-                        className={`toggle-option ${isToggled ? "active" : ""}`}
-                        onClick={() => setIsToggled(true)}
-                    >
-                        YEARLY
-                    </button>
+                    <button className={`toggle-option ${isToggled ? "active" : ""}`} onClick={() => setIsToggled(true)}>YEARLY</button>
                 </div>
             </div>
 
             <div className="revenue-container">
                 <button className="revenue-box">
-                    TOTAL PURCHASES <br />
+                    TOTAL PUR <br />
                     <span className="revenue-amount">45000</span>
                 </button>
-
             </div>
 
             <div className="stats-container">
@@ -81,9 +96,10 @@ const Dashboard = () => {
                 <div className="payment-box">PENDING PAYMENTS <br /><span>6</span></div>
             </div>
 
+            {/* Pie Chart */}
             <div className="chart-container">
                 <h3>TOTAL SALES BY DEALERS</h3>
-                <img src="/chart.png" alt="Sales Chart" className="chart-image" />
+                <Pie data={data} options={options} />
             </div>
         </div>
     );

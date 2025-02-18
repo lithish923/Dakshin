@@ -1,0 +1,93 @@
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.sidebar-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 352px;
+    height: 932px;
+    background: #0047AB;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.sidebar-overlay.open .sidebar {
+    transform: translateX(0);
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.sidebar-options{
+    display: grid;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+
+/* Menu Items */
+.menu-item {
+    font-size: 21px;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+/* Logout Button */
+.logout {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 430px) {
+    .sidebar {
+        width: 352px;
+        height: 932px;
+    }
+}
+
+@media screen and (min-width: 431px) {
+    .sidebar {
+        width: 25%;
+        height: 100%;
+    }
+}
