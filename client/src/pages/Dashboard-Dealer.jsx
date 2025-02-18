@@ -45,7 +45,7 @@ const Dashboard = () => {
         plugins: {
             legend: {
                 display: true,
-                position: "top",
+                position: "right",
             },
             title: {
                 display: true,
@@ -79,7 +79,7 @@ const Dashboard = () => {
 
             <div className="revenue-container">
                 <button className="revenue-box">
-                    TOTAL PUR <br />
+                    TOTAL PURCHASE <br />
                     <span className="revenue-amount">45000</span>
                 </button>
             </div>

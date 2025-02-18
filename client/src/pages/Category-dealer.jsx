@@ -1,25 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Category_dealer.css";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
+import Sidebar from "../components/Sidebar-dealer.jsx";
 
 const ProductsPage = () => {
     const navigate = useNavigate();
+    const [isToggled, setIsToggled] = useState(false);
+    const [currentDate, setCurrentDate] = useState("");
 
     // Redirect to category pages
     const handleCategoryClick = (category) => {
         navigate(`/category/${category}`);
     };
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString("en-GB"); // "DD/MM/YYYY"
+            setCurrentDate(formattedDate);
+        }, []);
+
     return (
         <div className="products-container">
             <div className="products-header">
-                <button className="menu-button">
+                <button className="menu-button" onClick={() => setMenuOpen(true)}>
                     <IoMenu size={30} color="white" />
                 </button>
-                <span className="date">25/07/2024</span>
-                <IoCartOutline size={30} color="black" className="cart-icon" />
+                <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+                <span className="date">{currentDate}</span>
+                <IoCartOutline size={30} color="white" className="cart-icon" />
             </div>
 
             <div className="category-list">

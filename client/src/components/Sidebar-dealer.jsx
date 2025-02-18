@@ -22,7 +22,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                 </button>
                 <nav className="sidebar-options">
                     <Link to="/dealer_dashboard" className="menu-item">Dashboard</Link>
-                    <Link to="/dealer_products" className="menu-item">Products</Link>
+                    <Link to="/dealer_category" className="menu-item">Products</Link>
                 </nav>
                 <button className="logout">Log Out</button>
             </div>
